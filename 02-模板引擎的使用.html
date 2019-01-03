@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>运动馆</li>
+        <li>运动馆</li>
+        <li>运动馆</li>
+        <li>运动馆</li>
+        <li>运动馆</li>
+        <li>运动馆</li>
+    </ul>
+    <script id="tpl" type="text/html">
+    	  <!-- 是数组就each遍历 -->
+        {{each rows}}
+        <li></li>
+        {{/each}}
+        <!-- 不是数组直接写 -->
+        条数：{{total}}
+       <!--  {{each rows}}
+       	for (var i = 0; i < rows.length; i++) {
+       		    	rows[i]
+       		    } -->
+			<!-- {{each list}}
+			         for (var i = 0; i < list.length; i++) {
+					    	list[i]
+					    } -->
+    </script>
+    <!-- 4.0最新版 -->
+    <script src="public/m/lib/artTemplate/template-web.js"></script>
+    <script>
+    var obj = {
+        "total": 5,
+        "rows": [{
+            "id": 1,
+            "categoryName": "运动馆",
+            "isDelete": 1
+        }, {
+            "id": 2,
+            "categoryName": "女士馆",
+            "isDelete": 1
+        }, {
+            "id": 3,
+            "categoryName": "男士馆",
+            "isDelete": 1
+        }, {
+            "id": 4,
+            "categoryName": "帆布馆",
+            "isDelete": 1
+        }, {
+            "id": 5,
+            "categoryName": "户外管",
+            "isDelete": 1
+        }]
+    }
+    var obj2 = {
+        list: obj.rows
+    }
+    console.log(obj);
+    console.log(obj2);
+    // 模板引擎要求传入对象 参数必须是对象  如果是对象就没有必要包了
+    template('tpl', obj);
+    // 如果不是对象就包装在对象里面
+    template('tpl', {list:[1,2,3,4]});
+    // for (var i = 0; i < list.length; i++) {
+    // 	list[i]
+    // }
+    // for (var i = 0; i < rows.length; i++) {
+    // 	rows[i]
+    // }
+    </script>
+</body>
+
+</html>

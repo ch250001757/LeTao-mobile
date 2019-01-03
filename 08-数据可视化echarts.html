@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    官方 <a href="http://www.echartsjs.com/examples/">http://www.echartsjs.com/examples/</a>
+    <!-- 2. 写结构 就是一个容器 用来显示图表的容器 -->
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <!-- 1. 引包 -->
+    <!-- <script src="https://cdn.bootcss.com/echarts/3.4.0/echarts.js"></script> -->
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script type="text/javascript">
+    // 3. 初始化
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.querySelector('#main'));
+    var users = {
+        "page": 1,
+        "size": 100,
+        "total": 65,
+        "rows": [{
+            "id": 1,
+            "username": "itcast",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "15102324243",
+            "isDelete": 0
+        }, {
+            "id": 2,
+            "username": "itcast1",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333333",
+            "isDelete": 0
+        }, {
+            "id": 3,
+            "username": "老师NB",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333334",
+            "isDelete": 0
+        }, {
+            "id": 4,
+            "username": "维维爱你",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333345",
+            "isDelete": 0
+        }, {
+            "id": 5,
+            "username": "555",
+            "password": "Fd4hxnCufD9vPx83ApMDyQ==",
+            "mobile": "15555515554",
+            "isDelete": 0
+        }, {
+            "id": 6,
+            "username": "郑大佬",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "15867898877",
+            "isDelete": 0
+        }, {
+            "id": 7,
+            "username": "你还没有女朋友",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13564579842",
+            "isDelete": 0
+        }, {
+            "id": 8,
+            "username": "黑猫警长",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "15454525231",
+            "isDelete": 0
+        }, {
+            "id": 9,
+            "username": "渣渣灰",
+            "password": "83nq88gxsE3hU0adG+w0Xg==",
+            "mobile": "13366666666",
+            "isDelete": 0
+        }, {
+            "id": 10,
+            "username": "渣渣霸",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333355555",
+            "isDelete": 0
+        }, {
+            "id": 11,
+            "username": "",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13111111111",
+            "isDelete": 0
+        }, {
+            "id": 12,
+            "username": "ha",
+            "password": "ICy5YqxZB1uWSwcVLSNLcA==",
+            "mobile": "18888888888",
+            "isDelete": 0
+        }, {
+            "id": 13,
+            "username": "迪丽热巴前男友",
+            "password": "4861iBoKH9qtASltdVSGjQ==",
+            "mobile": "13567389028",
+            "isDelete": 0
+        }, {
+            "id": 14,
+            "username": "马云",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "18620862547",
+            "isDelete": 0
+        }, {
+            "id": 15,
+            "username": "yaninor",
+            "password": "S62u5X/tVhABKilicxWPXw==",
+            "mobile": "13333333322",
+            "isDelete": 0
+        }, {
+            "id": 16,
+            "username": "中哥",
+            "password": "ICy5YqxZB1uWSwcVLSNLcA==",
+            "mobile": "18825118888",
+            "isDelete": 0
+        }, {
+            "id": 17,
+            "username": "kkwang",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "18888888886",
+            "isDelete": 0
+        }, {
+            "id": 18,
+            "username": "扣肉",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "13345678910",
+            "isDelete": 0
+        }, {
+            "id": 19,
+            "username": "zk",
+            "password": "tZxnvxlqR1gZHkL3ZnDOug==",
+            "mobile": "13865987526",
+            "isDelete": 0
+        }, {
+            "id": 20,
+            "username": "老师好呀",
+            "password": "0n0yDCfDAzt4gzR9i+yjFw==",
+            "mobile": "17648383823",
+            "isDelete": 0
+        }, {
+            "id": 21,
+            "username": "钞票",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "18988888888",
+            "isDelete": 0
+        }, {
+            "id": 22,
+            "username": "郑维家的小媳妇",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333336",
+            "isDelete": 0
+        }, {
+            "id": 23,
+            "username": "老师很帅",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "15818897977",
+            "isDelete": 0
+        }, {
+            "id": 24,
+            "username": "爱老虎油",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "15005201314",
+            "isDelete": 0
+        }, {
+            "id": 25,
+            "username": "班上的小姐姐都很漂亮",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "18873202855",
+            "isDelete": 0
+        }, {
+            "id": 26,
+            "username": "徐立",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "18589092695",
+            "isDelete": 0
+        }, {
+            "id": 27,
+            "username": "喜欢你***",
+            "password": "ICy5YqxZB1uWSwcVLSNLcA==",
+            "mobile": "18898765432",
+            "isDelete": 0
+        }, {
+            "id": 28,
+            "username": "666",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "14324135351",
+            "isDelete": 0
+        }, {
+            "id": 29,
+            "username": "在场各位都是垃圾",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333789",
+            "isDelete": 0
+        }, {
+            "id": 30,
+            "username": "even",
+            "password": "4861iBoKH9qtASltdVSGjQ==",
+            "mobile": "13416774835",
+            "isDelete": 0
+        }, {
+            "id": 31,
+            "username": "大咩咩",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13222222222",
+            "isDelete": 0
+        }, {
+            "id": 32,
+            "username": "dalao",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13114115116",
+            "isDelete": 0
+        }, {
+            "id": 33,
+            "username": "老司机",
+            "password": "sgbpWkOEKYliZJ5Y3Hs51A==",
+            "mobile": "13333333338",
+            "isDelete": 0
+        }, {
+            "id": 34,
+            "username": "itcast23",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333345632",
+            "isDelete": 0
+        }, {
+            "id": 35,
+            "username": "快跑杨彬来了",
+            "password": "0+uakjPlKUh0DX64wwYtFA==",
+            "mobile": "13999999999",
+            "isDelete": 0
+        }, {
+            "id": 36,
+            "username": "大便小红",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "17003554545",
+            "isDelete": 0
+        }, {
+            "id": 37,
+            "username": "我爱你  偷井盖的贼",
+            "password": "JfnnlDI7RTiF9RgfG2JNCw==",
+            "mobile": "18745632596",
+            "isDelete": 0
+        }, {
+            "id": 38,
+            "username": "天王大圣",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13350110311",
+            "isDelete": 0
+        }, {
+            "id": 39,
+            "username": "郑维嫁我",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13312345675",
+            "isDelete": 0
+        }, {
+            "id": 40,
+            "username": "老师哈哈哈哈哈哈",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "17654332424",
+            "isDelete": 0
+        }, {
+            "id": 41,
+            "username": "yuki",
+            "password": "ylu8UptIfkagnUSl0fEPuw==",
+            "mobile": "18888888889",
+            "isDelete": 0
+        }, {
+            "id": 42,
+            "username": "itcast到飞机",
+            "password": "Wxtoqav00s0VXIGpIl/RWA==",
+            "mobile": "15014557327",
+            "isDelete": 0
+        }, {
+            "id": 43,
+            "username": "00001",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "15663222512",
+            "isDelete": 0
+        }, {
+            "id": 44,
+            "username": "老师你好帅",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "13600136000",
+            "isDelete": 0
+        }, {
+            "id": 45,
+            "username": "为了联盟",
+            "password": "83nq88gxsE3hU0adG+w0Xg==",
+            "mobile": "13313313313",
+            "isDelete": 0
+        }, {
+            "id": 46,
+            "username": "放学峡谷见",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333456",
+            "isDelete": 0
+        }, {
+            "id": 47,
+            "username": "葫芦娃",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "15567859392",
+            "isDelete": 0
+        }, {
+            "id": 48,
+            "username": "维哥好样的",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "13012345678",
+            "isDelete": 0
+        }, {
+            "id": 49,
+            "username": "劳哥别上女厕所抽烟了",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13212341234",
+            "isDelete": 0
+        }, {
+            "id": 50,
+            "username": "坚持科学发展观",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333896",
+            "isDelete": 0
+        }, {
+            "id": 51,
+            "username": "周润发",
+            "password": "cj1QVRbgwZfkKmvjwK+RDg==",
+            "mobile": "18307102735",
+            "isDelete": 1
+        }, {
+            "id": 52,
+            "username": "微微一笑很倾城",
+            "password": "J8mMMras0mH9eMZ90bjXxg==",
+            "mobile": "13141314131",
+            "isDelete": 1
+        }, {
+            "id": 53,
+            "username": "mlgb",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333339",
+            "isDelete": 1
+        }, {
+            "id": 54,
+            "username": "郑偎家的情人",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333388",
+            "isDelete": 1
+        }, {
+            "id": 55,
+            "username": "小瀚瀚",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333332",
+            "isDelete": 1
+        }, {
+            "id": 56,
+            "username": "hzq LOVE",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333300",
+            "isDelete": 1
+        }, {
+            "id": 57,
+            "username": "吴京本人",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13339240836",
+            "isDelete": 1
+        }, {
+            "id": 58,
+            "username": "人在塔在",
+            "password": "vL4zZeasleosA0OiOVg03Q==",
+            "mobile": "13333256987",
+            "isDelete": 1
+        }, {
+            "id": 59,
+            "username": "性感荷官在线发牌",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13311122352",
+            "isDelete": 1
+        }, {
+            "id": 60,
+            "username": "↖左边小姐姐是我的",
+            "password": "ZRK9Q9nKpuAsmQsKgmUtyg==",
+            "mobile": "13333336666",
+            "isDelete": 0
+        }, {
+            "id": 61,
+            "username": "渣渣辉他爸",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333337",
+            "isDelete": 0
+        }, {
+            "id": 62,
+            "username": "维维豆奶",
+            "password": "4QrcOUm6Wau+VuBX8g+IPg==",
+            "mobile": "15678905463",
+            "isDelete": 0
+        }, {
+            "id": 63,
+            "username": "轻一点",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333433",
+            "isDelete": 0
+        }, {
+            "id": 64,
+            "username": "小郑郑有翘臀",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13354621873",
+            "isDelete": 0
+        }, {
+            "id": 65,
+            "username": "维哥nice",
+            "password": "lueSGJZetyySpUndWjMBEg==",
+            "mobile": "13333333777",
+            "isDelete": 0
+        }]
+    };
+    // 把数据里面的data rows数组遍历 查找里面名字包含郑的用户的数量
+    var xing = ["郑", "维", "老", "飞", "渣", "周"];
+    var person = [0, 0, 0, 0, 0, 0];
+    for (var i = 0; i < users.rows.length; i++) {
+        for (var j = 0; j < xing.length; j++) {
+            if (users.rows[i].username.indexOf(xing[j]) != -1) {
+                person[j]++;
+            }
+        }
+    }
+    console.log(person);
+    // 指定图表的配置项和数据
+    // var option = {
+    //     title: {
+    //         text: 'ECharts 入门示例'
+    //     },
+    //     tooltip: {},
+    //     legend: {
+    //         data: ['销量']
+    //     },
+    //     xAxis: {
+    //         data: xing
+    //     },
+    //     yAxis: {},
+    //     series: [{
+    //         name: '人数',
+    //         type: 'bar',
+    //         // 数据整理好了赋值给echats 参数
+    //         data: person
+    //     }]
+    // };
+    // option = {
+    //     xAxis: {
+    //         type: 'category',
+    //         data: xing
+    //     },
+    //     yAxis: {
+    //         type: 'value'
+    //     },
+    //     series: [{
+    //         data: person,
+    //         type: 'line'
+    //     }]
+    // };
+    // option = {
+    //     xAxis: {
+    //         type: 'category',
+    //         boundaryGap: false,
+    //         data: xing
+    //     },
+    //     yAxis: {
+    //         type: 'value'
+    //     },
+    //     series: [{
+    //         data: person,
+    //         type: 'line',
+    //         areaStyle: {}
+    //     }]
+    // };
+    // var data = genData(50);
+    // console.log(data.legendData);
+    // data.legendData = xing;
+    // console.log(data.selected);
+    // data.selected = person;
+    var obj = [];
+    for (var i = 0; i < xing.length; i++) {
+    	obj.push({
+    		name:xing[i],
+    		value:person[i]
+    	})
+    }
+    console.log(obj);
+    option = {
+    	  // 标题
+        title: {
+            text: '某站点用户姓名统计',
+            subtext: '纯属虚构',
+            x: 'center'
+        },
+        // 工具提示
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        // 说明提示的方向
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: xing
+        },
+        // 设置图表类型 一些配置
+        series: [{
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: obj,
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    </script>
+</body>
+
+</html>

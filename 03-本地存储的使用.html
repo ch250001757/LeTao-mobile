@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="search-input">
+    <button type="button" class="add">添加记录</button>
+    <button type="button" class="delete">删除记录</button>
+    <button type="button" class="query">查询记录</button>
+    <button type="button" class="clear">清空记录</button>
+    <script src="public/m/lib/zepto/zepto.min.js"></script>
+    <script>
+    var add = $('.add');
+    var btnDelete = $('.delete');
+    var query = $('.query');
+    var clear = $('.clear');
+    
+    add.on('click',function () {
+    		// 1. 获取本地存储对象 localStorage
+    		// 2. 调用存储对象的 设置值的方法 setItem('键',值)
+    		var search = $('.search-input').val();
+    		// 为了在之前存储的值后面加先获取本地存储的值  转成数组 
+    		// JSON.parse 把JSON字符串转成JS对象或者数组 
+    		// || [] 判断前面如果有值就使用前面的数组 没有值就使用后面空数组
+    		var arr = JSON.parse(localStorage.getItem('history')) || [];
+    		console.log(arr);
+    		arr.push(search);
+    		console.log(arr);
+    		// 因为本地存储要求存储字符串所以需要把数组转成字符串存储进去 JSON.stringify把数组对象转成JSON字符串
+    		localStorage.setItem('history',JSON.stringify(arr));
+    });
+
+    </script>
+</body>
+
+</html>

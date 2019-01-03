@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH乐淘分类页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 1.引入MUI框架的CSS -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2.引入fontAwesome 字体图标库的包 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 3.引入主页less -->
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- 4.引入less.js编译器文件,用来编译less代码css -->
+    <script src="./lib/less/less.js"></script>
+    <!-- 5.引入rem屏幕适配代码rem.js -->
+    <script src="./js/rem.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class=" left fa fa-arrow-left "></a>
+        <form action="">
+            <input type="search" placeholder="请输入要搜索的内容">
+        </form>
+        <a href="#" class="right fa fa-search"> </a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="left">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <ul>
+                        <li class="active"><a href="#">运动馆</a></li>
+                        <li><a href="#">女人馆</a></li>
+                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--这里放置真实显示的DOM内容-->
+                    <div class="mui-row">
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand1.png" alt="">
+                                <p>耐克</p>
+                            </a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand2.png" alt="">
+                                <p>阿迪</p>
+                            </a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand3.png" alt="">
+                                <p>新百伦</p>
+                            </a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand4.png" alt="">
+                                <p>哥伦比亚</p>
+                            </a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand5.png" alt="">
+                                <p>匡威</p>
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <!--底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <!-- 字体图标不好找,用查找元素 -->
+            <div class="mui-col-xs-3">
+                <a href="category.html" class="active">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="car.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- 引入MUI的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 获取元素发送ajax请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入分类js -->
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

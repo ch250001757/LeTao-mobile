@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+    }
+    
+    .inner {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 穿透事件的原因： 有两种事件 tap  和 click   click比tap慢的  触发完了tap之后还会触发click事件 -->
+    <div class="box">
+        <div class="inner"></div>
+        <a>去到百度</a>
+        <input type="file" name="">
+    </div>
+    <script src="public/m/lib/zepto/zepto.min.js"></script>
+    <script>
+    // var box = document.querySelector('.box');
+    // box.addEventListener('click', function() {
+    //     console.log('box');
+    // });
+
+    // var inner = document.querySelector('.inner');
+    // // 如果都是click事件就不会有问题 
+    // // 我是click阻止了click的冒泡  父元素click不会触发
+    // // inner.addEventListener('click', function(e) {
+    // //     console.log('inner');
+    // //     e.stopPropagation();
+    // // });
+    // // 使用touchstart事件 你阻止的touchstart的冒泡  父元素click还是会被触发
+    // inner.addEventListener('touchstart', function(e) {
+    //     console.log('touchstart');
+    //     e.stopPropagation();
+    // });
+    // var a = document.querySelector('a');
+    // a.addEventListener('touchstart', function(e) {
+    //     location = 'https://www.jd.com/';
+    //     // 阻止默认行为
+    //     e.preventDefault();
+    // });
+
+
+    var box = $('.box');
+    var body = document.querySelector('body');
+    $(body).on('click', '.box', function(e) {
+        console.log('box');
+    });
+
+    var inner = $('.inner');
+    // 如果都是click事件就不会有问题 
+    // 我是click阻止了click的冒泡  父元素click不会触发
+    // inner.addEventListener('click', function(e) {
+    //     console.log('inner');
+    //     e.stopPropagation();
+    // });
+    // 使用touchstart事件 你阻止的touchstart的冒泡  父元素click还是会被触发
+    $(body).on('click', '.inner', function(e) {
+        console.log(e);
+        e.stopImmediatePropagation()
+    });
+    </script>
+</body>
+
+</html>

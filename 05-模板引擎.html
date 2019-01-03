@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script id="tpl" type="text/html">
+        <h1>{{nameKey}}</h1> 
+        {{each sizeKey value}}
+        <p>{{value}}</p>
+        {{/each}}
+    </script>
+    <script id="tpl" type="text/html">
+    	<!-- 是模板传递的对象的键  一级键 就不用点 -->
+        <h1>{{proName}}</h1>
+        <!-- 包括pic也是 对象一级键 都是省略必须省略 -->
+         {{each pic value}}
+
+         	<!-- 遍历的pic数组里面的value值是对象才需要.键 -->
+         <!-- 	value={
+         	            "id": 1,
+         	            "picName": "product.jpg",
+         	            "productId": 1,
+         	            "picAddr": "/mobile/images/product.jpg"
+         	        } -->
+        		<p>{{value.picName}}</p>
+        {{/each}}
+    </script>
+    <script src="public/m/lib/artTemplate/template-web.js"></script>
+    <script>
+    // 离散数据 不是对象
+    var name = '张三';
+    // 简单类型数据 (不需要遍历直接用)
+    console.log(name);
+    var size = [1, 2, 3, 4];
+    // 复杂类型的 不能直接用
+    console.log(size);
+    for (var i = 0; i < size.length; i++) {
+        // 复杂类型的数组需要遍历才能使用
+        console.log(size[i]);
+    }
+    // 包装在对象里面
+    var obj = {
+        nameKey: name,
+        sizeKey: size
+    };
+    console.log(obj);
+    console.log(obj.nameKey);
+    // template 第二个参数的对象 包装在一个有名字对象 obj对象上
+    var html = template('tpl', obj);
+    // 匿名对象传入
+    var html = template('tpl', {
+        nameKey: name,
+        sizeKey: size
+    });
+
+    document.body.innerHTML = html;
+    // ajax请求回来已经是对象
+    var data = {
+        "id": 1,
+        "proName": "匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮",
+        "oldPrice": 888.1,
+        "price": 499.1,
+        "proDesc": "描述",
+        "size": "40-50",
+        "statu": 1,
+        "updateTime": "2017-01-04T16:28:29.000Z",
+        "num": 20,
+        "brandId": 1,
+        "pic": [{
+            "id": 1,
+            "picName": "product.jpg",
+            "productId": 1,
+            "picAddr": "/mobile/images/product.jpg"
+        }, {
+            "id": 7,
+            "picName": "/mobile/images/detail.jpg",
+            "productId": 1,
+            "picAddr": "/mobile/images/detail.jpg"
+        }]
+    }
+    // data是对象就直接用
+    var html = template('tpl1', data);
+    </script>
+</body>
+
+</html>

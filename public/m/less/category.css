@@ -1,0 +1,129 @@
+img {
+  vertical-align: middle;
+}
+body {
+  font-size: 0.14rem;
+  line-height: 0.14rem;
+  height: 100vh;
+  padding: 0.45rem 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #000;
+}
+/* 头部 */
+#header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  text-align: center;
+  line-height: 0.45rem;
+  background: #006699;
+}
+#header .left {
+  width: 0.45rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  text-align: center;
+  color: #fff;
+}
+#header h4 {
+  line-height: 0.45rem;
+  flex: 1;
+  margin: 0;
+  font-weight: normal;
+  color: #fff;
+}
+#header form {
+  flex: 1;
+  margin: 0;
+}
+#header form input {
+  margin-bottom: 0;
+  background: #fff;
+  text-align: left;
+}
+#header .right {
+  width: 0.45rem;
+  height: 0.45rem;
+  line-height: 0.45rem;
+  color: #fff;
+}
+/* 底部 */
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #006699;
+  height: 0.45rem;
+  width: 100%;
+  z-index: 999;
+}
+#footer a {
+  display: block;
+  font-size: 0.14rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 0.45rem;
+}
+#footer a.active {
+  color: #ffa500;
+}
+#main {
+  background: #eee;
+  display: flex;
+  height: 100%;
+}
+#main .left {
+  width: 0.8rem;
+  position: relative;
+}
+#main .left .mui-scroll {
+  height: 101%;
+}
+#main .left .mui-scroll li {
+  line-height: 0.45rem;
+  text-align: center;
+  border-bottom: 0.01rem solid #eee;
+  background-color: #fff;
+}
+#main .left .mui-scroll li.active {
+  background: #eee;
+}
+#main .left .mui-scroll li a {
+  display: block;
+  width: 0.8rem;
+  height: 0.45rem;
+}
+#main .right {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+#main .right .mui-scroll {
+  height: 101%;
+}
+#main .right .mui-row {
+  height: 101%;
+  padding: 0.1rem;
+}
+#main .right .mui-row a {
+  text-align: center;
+  display: block;
+  background-color: #fff;
+}
+#main .right .mui-row a img {
+  width: 100%;
+}

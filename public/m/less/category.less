@@ -1,0 +1,51 @@
+@import 'base.less';
+#main {
+    background: #eee;
+    display: flex;
+    height: 100%;
+    .left {
+        width: 0.8rem;
+        position: relative;
+        .mui-scroll {
+            height: 101%;
+            li {
+                line-height: 0.45rem;
+                text-align: center;
+                border-bottom: 0.01rem solid #eee;
+                background-color: #fff;
+                &.active {
+                    background: #eee;
+                }
+                a {
+                    display: block;
+                    width: 0.8rem;
+                    height: 0.45rem;
+                }
+            }
+        }
+    }
+    .right {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        .mui-scroll {
+            height: 101%;
+            // 2.要么宽度用自适应width:auto 然后left right 挤过去
+        }
+        .mui-row {
+            height: 101%;
+            // 1.父元素设置了padding 子元素设置了绝对定位padding失效
+            // 可以给里面的元素加padding
+
+            padding: 0.1rem;
+            a {
+                text-align: center;
+                display: block;
+                background-color: #fff;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
