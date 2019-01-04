@@ -81,49 +81,31 @@ a {
 #footer a.active {
   color: #ffa500;
 }
-#main {
-  background: #eee;
+#main .search {
+  padding: 10px;
+}
+#main .search form {
   display: flex;
-  height: 100%;
+  border: 1px solid #007aff;
+  border-radius: 6px;
 }
-#main .left {
-  width: 0.8rem;
-  position: relative;
-}
-#main .left .mui-scroll {
-  min-height: 101%;
-}
-#main .left .mui-scroll li {
-  line-height: 0.45rem;
-  text-align: center;
-  border-bottom: 0.01rem solid #eee;
-  background-color: #fff;
-}
-#main .left .mui-scroll li.active {
-  background: #eee;
-}
-#main .left .mui-scroll li a {
-  display: block;
-  width: 0.8rem;
-  height: 0.45rem;
-}
-#main .right {
-  position: relative;
+#main .search form input {
   flex: 1;
-  height: 100%;
-}
-#main .right .mui-scroll {
-  min-height: 101%;
-}
-#main .right .mui-row {
-  height: 101%;
-  padding: 0.1rem;
-}
-#main .right .mui-row a {
-  text-align: center;
-  display: block;
+  margin: 0;
+  text-align: left;
   background-color: #fff;
+  font-size: 14px;
+  border-radius: 6px 0 0 6px ;
+  border: 0;
 }
-#main .right .mui-row a img {
-  width: 100%;
+#main .search form button {
+  border-radius: 0 3px 3px 0;
+  border: none;
+}
+#main .content .mui-card .mui-card-header {
+  font-size: 16px;
+}
+#main .content .close ul li .mui-badge {
+  padding: 4px 5px  ;
+  color: #000;
 }

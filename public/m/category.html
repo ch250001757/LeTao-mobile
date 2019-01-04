@@ -44,6 +44,24 @@
                         <li><a href="#">男士馆</a></li>
                         <li><a href="#">帆布馆</a></li>
                         <li><a href="#">户外馆</a></li>
+                        <li><a href="#">电竞馆</a></li>
+                        <!-- <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">户外馆</a></li>
+                        <li><a href="#">男士馆</a></li>
+                        <li><a href="#">帆布馆</a></li>
+                        <li><a href="#">户外馆</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -54,9 +72,12 @@
                 <div class="mui-scroll">
                     <!--这里放置真实显示的DOM内容-->
                     <div class="mui-row">
-                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand1.png" alt="">
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="./images/brand1.png" alt="">
                                 <p>耐克</p>
-                            </a></div>
+                            </a>
+                        </div>
                         <div class="mui-col-xs-4"><a href="#"><img src="./images/brand2.png" alt="">
                                 <p>阿迪</p>
                             </a></div>
@@ -65,6 +86,9 @@
                             </a></div>
                         <div class="mui-col-xs-4"><a href="#"><img src="./images/brand4.png" alt="">
                                 <p>哥伦比亚</p>
+                            </a></div>
+                        <div class="mui-col-xs-4"><a href="#"><img src="./images/brand5.png" alt="">
+                                <p>匡威</p>
                             </a></div>
                         <div class="mui-col-xs-4"><a href="#"><img src="./images/brand5.png" alt="">
                                 <p>匡威</p>
@@ -109,7 +133,29 @@
 
 
 
+    <!-- 创建左侧分类模板 -->
+    <script id="leftTpl" type="text/html">
+        {{each rows}}
+             <li class="{{$value.id == 1?'active':""}}"><a href="#" data-id = "{{$value.id}}">{{$value.categoryName}}</a></li>
+        {{/each}}
+    </script>
 
+    <!-- 创建右侧分类模板 -->
+    <script id="rightTpl" type="text/html">
+       {{if rows.length > 0}} 
+       <!-- 遍历是内容 -->
+        {{each rows}}
+               <div class="mui-col-xs-4">
+                   <a href="#">
+                       <img src="{{$value.brandLogo}}" alt="">
+                       <p>{{$value.brandName}}</p>
+                   </a>
+               </div>
+        {{/each}}
+        {{ else }}
+               <p>暂无品牌!请选择其他品牌</p>
+        {{/if}}
+    </script>
     <!-- 引入MUI的js -->
     <script src="lib/mui/js/mui.js"></script>
     <!-- 引入zepto 获取元素发送ajax请求 -->
