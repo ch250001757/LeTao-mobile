@@ -8,12 +8,6 @@ body {
   padding: 0.45rem 0;
   background: #fff;
 }
-#main {
-  /* 会在main里面添加一个区域滚动容器 MUI自带了绝对定位 可以main设置相对定位 让 mui-scroll-wrapper相对main去定位 */
-  position: relative;
-  /* 同时需要给main设置高度100% 让main在中间范围显示 继承body内容的高度 */
-  height: 100%;
-}
 * {
   padding: 0;
   margin: 0;
@@ -23,9 +17,6 @@ ul {
 }
 a {
   color: #000;
-}
-input {
-  font-size: 0.14rem;
 }
 /* 头部 */
 #header {
@@ -93,72 +84,72 @@ input {
 }
 /* 搜索框 */
 .search {
-  padding: 0.1rem;
+  padding: 10px;
 }
 .search form {
   display: flex;
   border: 1px solid #007aff;
-  border-radius: 0.06rem;
+  border-radius: 6px;
 }
 .search form input {
   flex: 1;
   margin: 0;
   text-align: left;
   background-color: #fff;
-  font-size: 0.14rem;
-  border-radius: 0.06rem 0 0 0.06rem;
+  font-size: 14px;
+  border-radius: 6px 0 0 6px ;
   border: 0;
 }
 .search form button {
-  border-radius: 0 0.03rem 0.03rem 0;
+  border-radius: 0 3px 3px 0;
   border: none;
 }
-#header input {
+#main {
+  padding-top: 0.55rem;
+  height: 100%;
+  position: relative;
+}
+#main .search {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 0.55rem;
+  width: 100%;
+  z-index: 998;
+}
+#main .content {
+  position: relative;
+  height: 100%;
+}
+#main .mui-card {
+  margin: 0;
+  box-shadow: none;
+}
+#main .mui-card .mui-card-header {
+  background-color: #eeeeee;
   font-size: 0.14rem;
 }
-#main {
-  background: #eee;
-  display: flex;
-  height: 100%;
+#main .mui-card .mui-card-header .active {
+  color: red;
 }
-#main .left {
-  width: 0.8rem;
-  position: relative;
+#main .mui-card .mui-card-content .mui-row > div {
+  padding: 0.05rem;
 }
-#main .left .mui-scroll {
-  min-height: 101%;
-}
-#main .left .mui-scroll li {
-  line-height: 0.45rem;
-  text-align: center;
-  border-bottom: 0.01rem solid #eee;
-  background-color: #fff;
-}
-#main .left .mui-scroll li.active {
-  background: #eee;
-}
-#main .left .mui-scroll li a {
+#main .mui-card .mui-card-content .mui-row > div a {
+  border: 0.01rem solid #eee;
+  padding-bottom: 0.1rem;
   display: block;
-  width: 0.8rem;
-  height: 0.45rem;
-}
-#main .right {
-  position: relative;
-  flex: 1;
-  height: 100%;
-}
-#main .right .mui-scroll {
-  min-height: 101%;
-}
-#main .right .mui-row {
-  height: 101%;
-  padding: 0.1rem;
-}
-#main .right .mui-row a {
+  font-size: 0.14rem;
   text-align: center;
-  display: block;
-  background-color: #fff;
 }
-#main .right .mui-row a img {
+#main .mui-card .mui-card-content .mui-row > div a img {
   width: 100%;
+}
+#main .mui-card .mui-card-content .mui-row > div a .contentName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 0.18rem;
 }

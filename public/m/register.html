@@ -6,7 +6,7 @@
     <!-- 尽量加那么禁用缩放视口 防止bug 所以写全 -->
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CH乐淘搜索页面</title>
+    <title>CH乐淘注册中心</title>
     <!-- 引入站点图标 -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- 1.引入MUI框架的CSS -->
@@ -14,7 +14,7 @@
     <!-- 2.引入fontAwesome 字体图标库的包 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
     <!-- 3.引入主页less -->
-    <link rel="stylesheet/less" href="./less/search.less">
+    <link rel="stylesheet/less" href="./less/register.less">
     <!-- 4.引入less.js编译器文件,用来编译less代码css -->
     <script src="./lib/less/less.js"></script>
     <!-- 5.引入rem屏幕适配代码rem.js -->
@@ -23,46 +23,40 @@
 </head>
 
 <body>
-
-
     <!-- 头部区域 -->
     <header id="header">
-        <a href="index.html" class=" left fa fa-arrow-left "></a>
-        <h4>搜索中心</h4>
-        <a href="#" class="right"> </a>
+        <a href="./login.html" class=" left fa fa-arrow-left "></a>
+        <h4>注册中心</h4>
+        <a href="index.html" class="right fa fa-home"> </a>
     </header>
     <!-- 主体区域 -->
     <main id="main">
-        <div class="search">
-            <form action="#">
-                <input type="search" class="search-val" placeholder="请输入要搜索商品">
-                <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
-            </form>
-        </div>
-        <div class="content">
-            <div class="mui-card">
-                <!--页眉，放置标题-->
-                <div class="mui-card-header">
-                    <span>搜索历史</span>
-                    <span class="fa fa-trash-o clearHistory">清空记录</span>
-                </div>
-                <!--内容区-->
-                <div class="mui-card-content close">
-                    <ul class="mui-table-view ">
-                        <li class="mui-table-view-cell">Item 1
-                            <span class="mui-badge fa fa-times-circle "></span>
-                        </li>
-                        <li class="mui-table-view-cell">Item 2
-                            <span class="mui-badge fa fa-times-circle"></span>
-                        </li>
-                        <li class="mui-table-view-cell">Item 3
-                            <span class="mui-badge fa fa-times-circle"></span>
-                        </li>
-                    </ul>
-                </div>
-
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>手机号</label>
+                <input type="text" class="mui-input-clear moblie"  placeholder="请输入手机号" value="15818713926">
             </div>
-        </div>
+            <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" class="userName" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password passWord1" placeholder="请输入密码" >
+            </div>
+            <div class="mui-input-row">
+                <label>确认密码</label>
+                <input type="password" class="mui-input-password passWord2" placeholder="请输入确认密码" >
+            </div>
+            <div class="mui-input-row">
+                <label>验证码</label>
+                <input type="text" class="code" placeholder="请输入验证码" >
+                <button type="button" class="mui-btn mui-btn-primary btn-code">获取验证码</button>
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-register">注册</button>
+            </div>
+        </form>
 
     </main>
     <!--底部区域 -->
@@ -82,7 +76,7 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="cart.html">
+                <a href="car.html">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span>购物车</span>
                 </a>
@@ -98,17 +92,6 @@
 
 
 
-    <!-- 创建模板 -->
-    <script type="text/html" id="searchIdTpl">
-        {{each list}}
-             <li class="mui-table-view-cell" data-value = {{ $value }}> {{ $value }}
-                <span class="mui-badge fa fa-times-circle " data-id = {{$index}}></span>
-            </li>
-        {{/each}}
-    
-    
-    </script>
-
 
 
     <!-- 引入MUI的js -->
@@ -118,7 +101,7 @@
     <!-- 引入模板引擎 -->
     <script src="./lib/artTemplate/template-web.js"></script>
     <!-- 引入自己js -->
-    <script src="./js/search.js"></script>
+    <script src="./js/register.js"></script>
 </body>
 
 </html>

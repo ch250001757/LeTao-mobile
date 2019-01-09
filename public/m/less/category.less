@@ -1,4 +1,10 @@
 @import 'base.less';
+#header {
+    input {
+        font-size: 0.14rem;
+    }
+}
+
 #main {
     background: #eee;
     display: flex;
@@ -8,8 +14,7 @@
         position: relative;
         .mui-scroll {
             // 最小高度的意思是如果超过最小高度就失效
-            min-height: 101%;
-            // 不能写101%,内容一多的话因为主要由内容撑开 如果写101% 内容的话就底部滑动内容出不来有问题
+            min-height: 101%; // 不能写101%,内容一多的话因为主要由内容撑开 如果写101% 内容的话就底部滑动内容出不来有问题
             // height: 101%;
             li {
                 line-height: 0.45rem;
@@ -32,14 +37,11 @@
         flex: 1;
         height: 100%;
         .mui-scroll {
-             min-height: 101%;
-            // 2.要么宽度用自适应width:auto 然后left right 挤过去
+            min-height: 101%; // 2.要么宽度用自适应width:auto 然后left right 挤过去
         }
         .mui-row {
-            height: 101%;
-            // 1.父元素设置了padding 子元素设置了绝对定位padding失效
+            height: 101%; // 1.父元素设置了padding 子元素设置了绝对定位padding失效
             // 可以给里面的元素加padding
-
             padding: 0.1rem;
             a {
                 text-align: center;
@@ -52,3 +54,4 @@
         }
     }
 }
+

@@ -1,0 +1,47 @@
+body {
+  background-color: #2f4050;
+}
+#login {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  width: 500px;
+  height: 340px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#login .input-group {
+  padding: 10px 0;
+  width: 100%;
+}
+#login .input-group span {
+  width: 50px;
+  font-size: 18px;
+}
+#login .btn-group {
+  margin-top: 10px;
+}
+#login .btn-group button {
+  width: 100%;
+  background-color: hotpink;
+  color: #fff;
+}
+#login .btn-group button:focus {
+  outline: none;
+}
+#login img {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 10px solid #fff;
+  box-shadow: 0 0 1px 1px hotpink;
+}

@@ -26,11 +26,11 @@
 
     <!-- 头部区域 -->
     <header id="header">
-        <a href="#" class=" left fa fa-arrow-left "></a>
+        <a href="index.html" class=" left fa fa-arrow-left "></a>
         <form action="">
             <input type="search" placeholder="请输入要搜索的内容">
         </form>
-        <a href="#" class="right fa fa-search"> </a>
+        <a href="#" class="right fa fa-search btn-search"> </a>
     </header>
     <!-- 主体区域 -->
     <main id="main">
@@ -117,7 +117,7 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="car.html">
+                <a href="cart.html">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span>购物车</span>
                 </a>
@@ -130,7 +130,29 @@
             </div>
         </div>
     </footer>
-
+    <!-- 遮罩层 -->
+    <div id="mask">
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- 创建左侧分类模板 -->
@@ -142,7 +164,7 @@
 
     <!-- 创建右侧分类模板 -->
     <script id="rightTpl" type="text/html">
-       {{if rows.length > 0}} 
+        {{if rows.length > 0}} 
        <!-- 遍历是内容 -->
         {{each rows}}
                <div class="mui-col-xs-4">

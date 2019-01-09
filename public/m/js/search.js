@@ -30,15 +30,27 @@ $(function () {
         // 把搜索框内容清空
         $('#main .search-val').val("")
         searchHistory()
+
+        // 点击搜索按钮跳转到产品详情页面,把对应的数据传过去和当前搜索时间    URL传递参数默认为javascript中利用encodeURI()方法进行编码 
+        location ='productlist.html?key='+searchText+'&time='+new Date().getTime();
     });
+    // 给每个搜索历史记录li加个点击事件,然后跳转到产品列表页面,因为他是动态生成的所以要事件委托
+    $('#main .close .mui-table-view').on('tap','li',function(){
+        
+        console.log($(this).data('value'));
+        var searchText = $(this).data('value');
+        location ='productlist.html?key='+searchText+'&time='+new Date().getTime();
+        
+    })
     searchHistory()
     // 每次搜索都要把数据渲染到页面所以要封装函数
     function searchHistory() {
         // 拿到数据渲染到页面
         var data = localStorage.getItem('historyData1') 
-        // console.log(data);
+       
         data = JSON.parse(data) 
-
+        console.log(data);
+        // 把数组包在对象中
         var html = template('searchIdTpl', {
             list: data
         });
@@ -49,6 +61,7 @@ $(function () {
         var btnArray = ['是', '否'];
         mui.confirm('', '是否清空内容?', btnArray, function(e) {
             if (e.index == 0) {
+                // 不能用clear,把整个库都删了,只能删对应的键,会可能影响到别人的键
                 localStorage.removeItem('historyData1');
                 searchHistory()
             } 
@@ -67,7 +80,7 @@ $(function () {
         // 获取数组
         var data = localStorage.getItem('historyData1');
         console.log(data);
-        data = JSON.parse(data) || []
+        data = JSON.parse(data || '[]') 
         // 删除对应索引下的值
         data.splice(id,1)
         // console.log(data);
@@ -75,11 +88,6 @@ $(function () {
         // 重新设置localStorage
         localStorage.setItem('historyData1',data); 
         searchHistory()
-        
     })
-
-
-
-
 
 })

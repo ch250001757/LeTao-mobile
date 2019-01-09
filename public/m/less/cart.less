@@ -1,0 +1,72 @@
+@import 'base.less';
+body {
+    padding-bottom: 0.8rem;
+}
+
+#main {
+    .mui-table-view {
+        .mui-media {
+            .mui-navigate-right {
+                &::after {
+                    right: 0.05rem;
+                }
+                .left {
+                    text-align: center;
+                    margin-right: 0.08rem;
+                    img {
+                        max-width: 0.8rem;
+                        height: 0.8rem;
+                    }
+                    .mui-left {
+                        input {
+                            position: static;
+                        }
+                    }
+                }
+                .right {
+                    .product-name {
+                        white-space: normal;
+                        line-height: 0.2rem;
+                        color: #666;
+                    }
+                    div {
+                        line-height: 0.37rem;
+                        span {
+                            &.price {
+                                color: red;
+                            }
+                            font-weight: bold;
+                        }
+                        del {
+                            color: #666;
+                        }
+                        &.product-params {
+                            color: #333;
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#order {
+    position: fixed;
+    padding-left: 0.1rem;
+    border-top: 0.01rem solid #eee;
+    left: 0;
+    width: 100%;
+    bottom: 0.45rem;
+    line-height: 0.34rem;
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-weight: bold;
+    z-index: 998;
+    background-color: #fff;
+    span {
+        margin-right: 0.1rem;
+    }
+}

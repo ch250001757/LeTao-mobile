@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 尽量加那么禁用缩放视口 防止bug 所以写全 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH乐淘产品页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 1.引入MUI框架的CSS -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2.引入fontAwesome 字体图标库的包 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 3.引入主页less -->
+    <link rel="stylesheet/less" href="./less/productlist.less">
+    <!-- 4.引入less.js编译器文件,用来编译less代码css -->
+    <script src="./lib/less/less.js"></script>
+    <!-- 5.引入rem屏幕适配代码rem.js -->
+    <script src="./js/rem.js"></script>
+
+</head>
+
+<body>
+
+
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="./index.html" class=" left fa fa-arrow-left "></a>
+        <h4>商品列表</h4>
+        <a href="" class="right"> </a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="search">
+            <form action="#">
+                <input type="search" class="search-val" placeholder="请输入要搜索商品">
+                <button type="button" class="mui-btn mui-btn-primary btn-search">搜索</button>
+            </form>
+        </div>
+        <!--下拉刷新容器-->
+        <div class="content">
+            <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--数据列表-->
+                    <div class="mui-card">
+                        <!--页眉，放置标题-->
+                        <div class="mui-card-header ">
+                            <a href="#" class="active" data-sort-type="time">上架时间<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort-type="price" data-sort="1">价格<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort-type="num" data-sort="1">销量<i class="fa fa-angle-down"></i></a>
+                            <a href="#" data-sort-type="discount">折扣<i class="fa fa-angle-down"></i></a>
+                        </div>
+                        <!--内容区-->
+                        <div class="mui-card-content">
+                            <div class="mui-row">
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                        <img src="./images/detail.jpg" alt="">
+                                        <p>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                        <p>
+                                            <span>￥499.1</span>
+                                            <del>￥888.1</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                    </a>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                        <img src="./images/detail.jpg" alt="">
+                                        <p>李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                        <p>
+                                            <span>￥499.1</span>
+                                            <del>￥888.1</del>
+                                        </p>
+                                        <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 内容 -->
+
+    </main>
+    <!--底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <!-- 字体图标不好找,用查找元素 -->
+            <div class="mui-col-xs-3">
+                <a href="category.html" class="active">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- 创建模板 -->
+    <script type="text/html" id="productlistTpl">
+        {{each data}}
+        <div class="mui-col-xs-6">
+                <a href="#">
+                    <img src="{{ $value.pic[0].picAddr }}" alt="">
+                    <p class='contentName'>{{ $value.proName }}</p>
+                    <p>
+                        <span>{{ $value.price }}</span>
+                        <del>{{ $value.oldPrice }}</del>
+                    </p>
+                    <!-- 根据自定义属性id来跳转产品的详情页 -->
+                    <button type="button" class="mui-btn mui-btn-primary btn-detail" data-id = {{ $value.id }}>立即购买{{ $value.num }}</button>
+                </a>
+            </div>
+        {{/each}}
+    
+    
+    </script>
+
+
+
+    <!-- 引入MUI的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 获取元素发送ajax请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入自己js -->
+    <script src="./js/productlist.js"></script>
+</body>
+
+</html>

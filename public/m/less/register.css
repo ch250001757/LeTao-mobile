@@ -6,6 +6,7 @@ body {
   line-height: 0.14rem;
   height: 100vh;
   padding: 0.45rem 0;
+  background: #fff;
 }
 * {
   padding: 0;
@@ -16,6 +17,9 @@ ul {
 }
 a {
   color: #000;
+}
+input {
+  font-size: 0.14rem;
 }
 /* 头部 */
 #header {
@@ -81,10 +85,38 @@ a {
 #footer a.active {
   color: #ffa500;
 }
-#main .content .mui-card .mui-card-header {
-  font-size: 16px;
+/* 搜索框 */
+.search {
+  padding: 0.1rem;
 }
-#main .content .close ul li .mui-badge {
-  padding: 4px 5px  ;
-  color: #000;
+.search form {
+  display: flex;
+  border: 1px solid #007aff;
+  border-radius: 0.06rem;
+}
+.search form input {
+  flex: 1;
+  margin: 0;
+  text-align: left;
+  background-color: #fff;
+  font-size: 0.14rem;
+  border-radius: 0.06rem 0 0 0.06rem ;
+  border: 0;
+}
+.search form button {
+  border-radius: 0 0.03rem 0.03rem 0;
+  border: none;
+}
+#main .btn-code {
+  position: absolute;
+  right: 0;
+  top: 0.01rem;
+  width: auto;
+}
+#main .btn-register {
+  width: 100%;
+}
+#main .mui-button-row:last-child {
+  padding: 10px 10px;
+  height: auto;
 }

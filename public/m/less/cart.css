@@ -113,52 +113,60 @@ input {
   border-radius: 0 0.03rem 0.03rem 0;
   border: none;
 }
-#header input {
-  font-size: 0.14rem;
+body {
+  padding-bottom: 0.8rem;
 }
-#main {
-  background: #eee;
+#main .mui-table-view .mui-media .mui-navigate-right::after {
+  right: 0.05rem;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .left {
+  text-align: center;
+  margin-right: 0.08rem;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .left img {
+  max-width: 0.8rem;
+  height: 0.8rem;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .left .mui-left input {
+  position: static;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right .product-name {
+  white-space: normal;
+  line-height: 0.2rem;
+  color: #666;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right div {
+  line-height: 0.37rem;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right div span {
+  font-weight: bold;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right div span.price {
+  color: red;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right div del {
+  color: #666;
+}
+#main .mui-table-view .mui-media .mui-navigate-right .right div.product-params {
+  color: #333;
   display: flex;
-  height: 100%;
+  justify-content: space-between;
 }
-#main .left {
-  width: 0.8rem;
-  position: relative;
-}
-#main .left .mui-scroll {
-  min-height: 101%;
-}
-#main .left .mui-scroll li {
-  line-height: 0.45rem;
-  text-align: center;
-  border-bottom: 0.01rem solid #eee;
-  background-color: #fff;
-}
-#main .left .mui-scroll li.active {
-  background: #eee;
-}
-#main .left .mui-scroll li a {
-  display: block;
-  width: 0.8rem;
-  height: 0.45rem;
-}
-#main .right {
-  position: relative;
-  flex: 1;
-  height: 100%;
-}
-#main .right .mui-scroll {
-  min-height: 101%;
-}
-#main .right .mui-row {
-  height: 101%;
-  padding: 0.1rem;
-}
-#main .right .mui-row a {
-  text-align: center;
-  display: block;
-  background-color: #fff;
-}
-#main .right .mui-row a img {
+#order {
+  position: fixed;
+  padding-left: 0.1rem;
+  border-top: 0.01rem solid #eee;
+  left: 0;
   width: 100%;
+  bottom: 0.45rem;
+  line-height: 0.34rem;
+  display: flex;
+  justify-content: space-between;
+  color: red;
+  font-weight: bold;
+  z-index: 998;
+  background-color: #fff;
+}
+#order span {
+  margin-right: 0.1rem;
 }

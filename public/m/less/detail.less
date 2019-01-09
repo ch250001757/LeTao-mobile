@@ -1,0 +1,50 @@
+@import 'base.less';
+
+
+#main {
+    height: 100%;
+    position: relative;
+    #productInfo {
+        li {
+            strong {
+                line-height: 20px;
+            }
+            .product-price {
+                color: red;
+                font-weight: bold;
+            }
+            del {
+                color: #666;
+            }
+            div {
+                span {
+                    vertical-align: middle;
+                }
+                button {
+                    vertical-align: middle;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    background-color: #ccc;
+    .mui-row {
+        >div {
+           &:first-child {
+               
+               padding: 0;
+               i {
+                   font-size: 20px;
+                   color: #333;
+               }
+           }
+            padding: 5px;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

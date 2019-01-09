@@ -1,0 +1,56 @@
+@import 'base.less';
+#main {
+    // ????
+    padding-top: 0.55rem;
+    height: 100%;
+    position: relative;
+    .search {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0.55rem;
+        width: 100%;
+        z-index: 998;
+    }
+    .content {
+        position: relative;
+        height:100%;
+    }
+    .mui-card {
+        margin: 0;
+        box-shadow: none;
+        .mui-card-header {
+            background-color: #eeeeee;
+            font-size: 0.14rem;
+            .active {
+                color: red;
+            }
+        }
+        .mui-card-content {
+            .mui-row {
+                >div {
+                    padding: 0.05rem;
+                    a {
+                        border: 0.01rem solid #eee;
+                        padding-bottom: 0.1rem;
+                        display: block;
+                        font-size: 0.14rem;
+                        text-align: center;
+                        img {
+                            width: 100%;
+                        }
+                      .contentName {
+                        overflow : hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        line-height: 0.18rem;
+                      }
+                    
+                    }
+                }
+            }
+        }
+    }
+}
