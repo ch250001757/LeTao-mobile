@@ -19,6 +19,11 @@
     <script src="./lib/less/less.js"></script>
     <!-- 5.引入rem屏幕适配代码rem.js -->
     <script src="./js/rem.js"></script>
+    <script>
+        // 页面加载先隐藏
+            document.documentElement.style.display = 'none';
+        
+    </script>
 
 </head>
 
@@ -28,7 +33,7 @@
     <header id="header">
         <a href="javascript:history.back()" class=" left fa fa-arrow-left "></a>
         <h4>购物车</h4>
-        <a href="#" class="right fa fa-refresh"> </a>
+        <a href="cart.html" class="right fa fa-refresh"> </a>
     </header>
     <!-- 主体区域 -->
     <main id="main">

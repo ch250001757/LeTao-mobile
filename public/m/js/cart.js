@@ -40,7 +40,6 @@ $(function () {
         // 每次上拉加载page+1
         setTimeout(function () {
             page++;
-            // 问题1 为什么第一次可以请求到?
             $.ajax({
                 url: '/cart/queryCartPaging',
                 data: {
@@ -91,6 +90,8 @@ $(function () {
                 // 模仿数据请求的事件
                 if (!data.error) {
                     console.log(data);
+                    // 数据请求到的话,把html显示
+                    document.documentElement.style.display = 'block'
                     var html = template('cartlistTpl', data);
                     $('#main .cartList').html(html);
                     // 页面一加载把总额计算出来
