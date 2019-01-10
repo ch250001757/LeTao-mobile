@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH乐淘后端登录页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <!-- 引入bootstrap样式 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 2.引入less -->
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!-- 引入lee的js -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <main id="main">
+        <div class="left">
+            <div class="logo">
+                <a href="#" class="thumbnail ">
+                    <img src="./images/CH.jpg" alt="...">
+                </a>
+                <p>CH</p>
+            </div>
+
+            <div class="list-group">
+                <a href="#" class="list-group-item active">
+                    用户管理
+                </a>
+                <a class="list-group-item" data-toggle="collapse" href="#collapseExample">分类管理</a>
+                <div class="collapse categroy" id="collapseExample">
+                    <a href="./firstcategory.html" class="list-group-item">一级分类</a>
+                    <a href="./secondcategory.html" class="list-group-item">二级分类</a>
+                </div>
+                <a href="#" class="list-group-item">商品管理</a>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="title">
+                <a href="#" class="fa fa-navicon"></a>
+                <a href="#" class="fa fa-sign-out signOut">退出</a>
+            </div>
+            <div class="content">
+                <table class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>用户名</th>
+                            <th>电话</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>itcast</td>
+                            <td>15102324243</td>
+                            <td>已启用</td>
+                            <td><button type="button" class="btn btn-danger">禁用</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>1</td>
+                            <td>15818713926</td>
+                            <td>已启用</td>
+                            <td><button type="button" class="btn btn-success">启用</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <ul id="page"></ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<!-- 创建用户模板 -->
+<script type="text/html" id="userTpl">
+    {{each rows}}
+    <tr>
+        <th scope="row">{{$value.id}}</th>
+        <td>{{$value.id}}</td>
+        <td>{{$value.mobile}}</td>
+        {{if $value.isDelete == 1}}
+        <td>已启用</td>
+        <td><button type="button" class="btn btn-danger" data-isdelete="{{$value.isDelete}}" data-id="{{$value.id}}">禁用</button></td>
+        {{else}}
+        <td>已禁用</td>
+        <td><button type="button" class="btn btn-success" data-isdelete="{{$value.isDelete}}" data-id="{{$value.id}}">启用</button></td>
+        {{/if}}
+    </tr>
+    {{/each}}
+
+
+</script>
+
+
+
+
+<!-- 引入模板插件 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!-- 先引入juqery,因为bootstrap依赖于juqery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 引入bootstrap -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 引入bootstrap分页插件 -->
+<script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+<!-- 引入自己的js -->
+<script src="./js/index.js"></script>

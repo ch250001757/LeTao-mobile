@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CH乐淘后端登录页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!-- 引入字体图标 -->
     <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
     <!-- 引入bootstrap样式 -->
@@ -22,23 +24,29 @@
             <span class="input-group-addon" id="sizing-addon2">
                 <i class="fa fa-user" aria-hidden="true"></i>
             </span>
-            <input type="text" class="form-control userName" placeholder="Username" aria-describedby="sizing-addon2">
+            <input type="text" class="form-control userName" placeholder="Username" aria-describedby="sizing-addon2"
+                value="root">
         </div>
         <div class="input-group">
             <span class="input-group-addon" id="sizing-addon2">
                 <i class="fa fa-key" aria-hidden="true"></i>
             </span>
-            <input type="text" class="form-control password" placeholder="Password" aria-describedby="sizing-addon2">
+            <input type="password" class="form-control password" placeholder="Password" aria-describedby="sizing-addon2"
+                value="123456">
         </div>
         <div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default">登录</button>
         </div>
-        <img src="./images/25.png" alt="">
+        <img src="./images/CH.jpg" alt="">
     </form>
 </body>
 
 </html>
 <!-- 引入模板 -->
 <script src="./lib/artTemplate/template-web.js"></script>
+<!-- 引入juqery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 引入bootstrap -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
 <!-- 引入自己的js -->
 <script src="./js/login.js"></script>

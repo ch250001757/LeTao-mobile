@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH乐淘后端登录页面</title>
+    <!-- 引入站点图标 -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <!-- 引入bootstrap样式 -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 2.引入less -->
+    <link rel="stylesheet/less" href="./less/index.less">
+    <!-- 引入lee的js -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <main id="main">
+        <div class="left">
+            <div class="logo">
+                <a href="#" class="thumbnail ">
+                    <img src="./images/CH.jpg" alt="...">
+                </a>
+                <p>CH</p>
+            </div>
+
+            <div class="list-group">
+                <a href="index.html" class="list-group-item ">
+                    用户管理
+                </a>
+                <a class="list-group-item" data-toggle="collapse " href="#collapseExample">分类管理</a>
+                <div class="collapse in categroy" id="collapseExample">
+                    <a href="./firstcategory.html" class="list-group-item active">一级分类</a>
+                    <a href="./secondcategory.html" class="list-group-item">二级分类</a>
+                </div>
+                <a href="#" class="list-group-item">商品管理</a>
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="title">
+                <a href="#" class="fa fa-navicon"></a>
+                <a href="#" class="fa fa-sign-out signOut">退出</a>
+            </div>
+            <div class="content">
+                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+                    添加分类
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                        aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">添加品牌</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">分类名称</span>
+                                    <select class="form-control categroy-select">
+                                        <option value="1">运动馆</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">品牌名称</span>
+                                    <input type="text" class="form-control brandName" placeholder="请输入品牌名称"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1">品牌图片</span>
+                                    <form id="uploadForm" enctype="multipart/form-data">
+                                        <input type="file" class="form-control add-category" placeholder="请输入分类名称"
+                                            aria-describedby="basic-addon1" name="pic1">
+                                    </form>
+
+                                </div>
+                                <div class="text-center">
+                                    <img src="./images/CH.jpg" alt="" style="width: 200px;height: 200px" class="brandLogo">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary btn-save" data-dismiss="modal">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>品牌编号</th>
+                            <th>品牌名称</th>
+                            <th>品牌logo</th>
+                            <th>所属分类</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><input type="checkbox"></th>
+                            <td>5</td>
+                            <td>啊撒德2</td>
+                            <td><img src="" alt=""></td>
+                            <td>女士馆</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><input type="checkbox"></th>
+                            <td>5</td>
+                            <td><img src="" alt=""></td>
+                            <td>女士馆</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <ul id="page"></ul>
+
+            </div>
+    </main>
+</body>
+
+</html>
+<!-- 创建分类模板 -->
+<script type="text/html" id="userTpl">
+    {{each rows}}
+    <tr>
+         <th scope="row"><input type="checkbox"></th>
+         <td>{{$value.id}}</td>
+         <td>{{$value.brandName}}</td>
+         <td><img src="{{$value.brandLogo}}" alt="" ></td>
+         <td>{{$value.categoryName}}</td>
+    </tr>
+    {{/each}}
+</script>
+<!-- 创建分类模态框下拉分类 -->
+<script type="text/html" id="categoryNameTpl">
+    {{each rows}}
+    <option value="{{$value.id}}">{{$value.categoryName}}</option>
+    {{/each}}
+</script>
+
+
+
+
+<!-- 引入模板插件 -->
+<script src="./lib/artTemplate/template-web.js"></script>
+<!-- 先引入juqery,因为bootstrap依赖于juqery -->
+<script src="./lib/jquery/jquery.min.js"></script>
+<!-- 引入bootstrap -->
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- 引入bootstrap分页插件 -->
+<script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+<!-- 引入自己的js -->
+<script src="./js/secondcategory.js"></script>
